@@ -1,7 +1,8 @@
-package org.aitutor.dynamodb;
+package org.aitutor.controller;
 
 import java.util.List;
-
+import org.aitutor.model.Fruit;
+import org.aitutor.service.fruits.FruitServiceImpl;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -16,7 +17,7 @@ import jakarta.ws.rs.core.MediaType;
 public class FruitResource {
 
     @Inject
-    FruitSyncService service;
+    FruitServiceImpl service;
 
     @GET
     public List<Fruit> getAll() {

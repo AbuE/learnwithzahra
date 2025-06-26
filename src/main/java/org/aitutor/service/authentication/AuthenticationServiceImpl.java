@@ -1,15 +1,14 @@
-package org.aitutor.dynamodb;
+package org.aitutor.service.authentication;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+import org.aitutor.model.Fruit;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
 @ApplicationScoped
-public class FruitSyncService extends AbstractService {
+public class AuthenticationServiceImpl extends AuthenticationService {
 
     @Inject
     DynamoDbClient dynamoDB;
@@ -27,4 +26,7 @@ public class FruitSyncService extends AbstractService {
     public Fruit get(String name) {
         return Fruit.from(dynamoDB.getItem(getRequest(name)).item());
     }
+
+
+
 }

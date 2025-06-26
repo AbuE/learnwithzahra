@@ -1,13 +1,14 @@
-package org.aitutor.dynamodb;
+package org.aitutor.service.child_progress;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.aitutor.model.Fruit;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
 
-public abstract class AbstractService {
+public abstract class ChildService {
 
     public final static String FRUIT_NAME_COL = "fruitName";
     public final static String FRUIT_DESC_COL = "fruitDescription";

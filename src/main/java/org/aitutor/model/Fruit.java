@@ -1,8 +1,8 @@
-package org.aitutor.dynamodb;
+package org.aitutor.model;
 
 import java.util.Map;
 import java.util.Objects;
-
+import org.aitutor.service.fruits.FruitService;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 
@@ -18,8 +18,8 @@ public class Fruit {
     public static Fruit from(Map<String, AttributeValue> item) {
         Fruit fruit = new Fruit();
         if (item != null && !item.isEmpty()) {
-            fruit.setName(item.get(AbstractService.FRUIT_NAME_COL).s());
-            fruit.setDescription(item.get(AbstractService.FRUIT_DESC_COL).s());
+            fruit.setName(item.get(FruitService.FRUIT_NAME_COL).s());
+            fruit.setDescription(item.get(FruitService.FRUIT_DESC_COL).s());
         }
         return fruit;
     }
