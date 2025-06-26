@@ -11,7 +11,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/fruits")
+@Path("/api/fruits")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class RestfulServiceGateway {
@@ -20,6 +20,7 @@ public class RestfulServiceGateway {
     FruitServiceImpl service;
 
     @GET
+    @Path("getall")
     public List<Fruit> getAll() {
         return service.findAll();
     }
@@ -31,6 +32,7 @@ public class RestfulServiceGateway {
     }
 
     @POST
+    @Path("add")
     public List<Fruit> add(Fruit fruit) {
         service.add(fruit);
         return getAll();
