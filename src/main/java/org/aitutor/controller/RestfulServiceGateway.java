@@ -14,7 +14,7 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/fruits")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class FruitResource {
+public class RestfulServiceGateway {
 
     @Inject
     FruitServiceImpl service;
