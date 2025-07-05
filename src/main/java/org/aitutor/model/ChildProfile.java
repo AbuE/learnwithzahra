@@ -1,5 +1,6 @@
 package org.aitutor.model;
 
+@RegisterForReflection
 public class ChildProfile {
 
         public String id;

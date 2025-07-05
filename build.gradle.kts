@@ -13,6 +13,8 @@ val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
 
 dependencies {
+    implementation("io.quarkus:quarkus-kotlin")
+    implementation("io.quarkus:quarkus-redis-client")
     implementation("io.quarkus:quarkus-container-image-docker")
     implementation("io.quarkus:quarkus-smallrye-openapi")
     implementation("software.amazon.awssdk:url-connection-client") 
