@@ -14,7 +14,7 @@ public class FruitServiceImpl extends FruitService {
     DynamoDbClient dynamoDB;
 
     public List<Fruit> findAll() {
-        return dynamoDB.scanPaginator(scanRequest()).items().stream()
+        return dynamoDB.scanPaginator(scanRequest(Fruit.class.getName())).items().stream()
                 .map(Fruit::from)
                 .collect(Collectors.toList());
     }
